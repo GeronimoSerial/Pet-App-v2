@@ -1,0 +1,23 @@
+<!-- input.component.html -->
+<mat-form-field appearance="outline">
+    <mat-label>{{ propertyName }}</mat-label>
+    <input matInput [type]="fieldType()" [formControl]="formChild.controls[inputValue]">    
+      <mat-error *ngIf="formChild.controls[inputValue].hasError('required')">
+        {{ propertyName }} is required
+      </mat-error> 
+    
+</mat-form-field>
+
+<mat-form-field appearance="outline" *ngIf="fieldType() == 'date'">
+    <mat-label>{{ propertyName }}</mat-label>
+    <input matInput [matDatepicker]="datepicker" [formControl]="formChild.controls[inputValue]">
+    <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker></mat-datepicker>
+    <mat-error *ngIf="formChild.controls['birthDay'].hasError('required')">
+      Birthday is required
+    </mat-error>
+  </mat-form-field>
+
+
+  
+  

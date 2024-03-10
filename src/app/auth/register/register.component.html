@@ -1,0 +1,45 @@
+<div class="card flex-center-center">
+  <div class="card-styling align-text">
+    <div class="logo-div flex-center-center">
+      <img class="logo-image" src="./assets/pet-logo.png" />
+    </div>
+    <div class="flex-center-center">
+      <form [formGroup]="form" (ngSubmit)="form.valid && registerUser()" class="form-styles">
+
+        <div class="flex-around-center">
+
+          <div class="grid-inputs">
+
+            <app-input [propertyName]="'Name'" [inputValue]="'name'" [formChild]="form" ></app-input>
+
+            <app-input [propertyName]="'Last name'" [inputValue]="'lastName'" [formChild]="form" ></app-input>
+
+            <app-input [isDateField]="true" [propertyName]="'Birthday'" [inputValue]="'birthDay'" [formChild]="form"></app-input>
+            
+            <app-input [isEmailField]="true" [propertyName]="'Email'" [inputValue]="'email'" [formChild]="form"></app-input>
+           
+            <app-input [isPwdField]="true" [propertyName]="'Password'" [inputValue]="'password'" [formChild]="form"></app-input>
+
+            <app-input [isPwdField]="true" [propertyName] ="'Confirm Password'" [inputValue] ="'password'" [formChild]="form"></app-input>
+              
+          </div>
+          <div class="grid-inputs">
+            <img [src]="srcResult != null ? srcResult : './assets/blank-profile.png'" class ="profile-img">
+              <button type="button" mat-raised-button (click)="fileInput.click()">Choose a profile photo</button>
+              <input hidden (change)="onFileSelected($event)" type="file" #fileInput id="file" >
+             
+             
+              <button type="submit" mat-stroked-button color="primary">
+                Register
+             </button>
+          
+            </div>
+      
+            <mat-spinner [diameter]="35" *ngIf="loading"></mat-spinner>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
