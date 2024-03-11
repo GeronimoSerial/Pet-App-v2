@@ -1,38 +1,26 @@
 <div class="card flex-center-center">
-    <div class="card-styling align-text">
-      <div class="logo-div flex-center-center">
-        <img class="logo-image" src="./assets/pet-logo.png" />
-      </div>
-      <div class="flex-center-center">
-        <form [formGroup]="form" (ngSubmit)="form.valid && loginUser()" class="form-styles">
-          <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" formControlName="email" />
-            <mat-error *ngIf="form.controls['email'].hasError('email>')">
-              Invalid email
-            </mat-error>
-            <mat-error *ngIf="form.controls['email'].hasError('required')">
-              Email is required
-            </mat-error>
-          </mat-form-field>
-  
-          <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" formControlName="password" />
-            <mat-error *ngIf="form.controls['password'].hasError('required')">
-              Password is required
-            </mat-error>
-          </mat-form-field>
-  
-          <div class="flex-center-center">
-            <button type="submit" mat-stroked-button color="primary">
-              Login
-            </button>
-          </div>
-        </form>
-      </div> 
-      <div class="flex-center-center spinner">
-        <mat-spinner [diameter] = "35" *ngIf="loading" ></mat-spinner>
-      </div>
+  <div class="card-styling align-text">
+    <div class="logo-div flex-center-center">
+      <img class="logo-image" src="./assets/pet-logo.png" />
+    </div>
+    <div class="flex-center-center">
+      <form [formGroup]="form" (ngSubmit)="form.valid && loginUser()" class="form-styles">
+
+        <app-input [fieldType]="'email'" [propertyName]="'Email'" [inputValue]="'email'" [formChild]="form"></app-input>
+
+
+        <app-input [fieldType]="'password'" [propertyName]="'Password'" [inputValue]="'password'" [formChild]="form">
+        </app-input>
+
+        <div class="flex-center-center">
+          <button type="submit" mat-stroked-button color="primary">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="flex-center-center spinner">
+      <mat-spinner [diameter]="35" *ngIf="loading"></mat-spinner>
     </div>
   </div>
+</div>

@@ -7,39 +7,46 @@
       <form [formGroup]="form" (ngSubmit)="form.valid && registerUser()" class="form-styles">
 
         <div class="flex-around-center">
-
-          <div class="grid-inputs">
-
-            <app-input [propertyName]="'Name'" [inputValue]="'name'" [formChild]="form" ></app-input>
-
-            <app-input [propertyName]="'Last name'" [inputValue]="'lastName'" [formChild]="form" ></app-input>
-
-            <app-input [isDateField]="true" [propertyName]="'Birthday'" [inputValue]="'birthDay'" [formChild]="form"></app-input>
-            
-            <app-input [isEmailField]="true" [propertyName]="'Email'" [inputValue]="'email'" [formChild]="form"></app-input>
-           
-            <app-input [isPwdField]="true" [propertyName]="'Password'" [inputValue]="'password'" [formChild]="form"></app-input>
-
-            <app-input [isPwdField]="true" [propertyName] ="'Confirm Password'" [inputValue] ="'password'" [formChild]="form"></app-input>
-              
-          </div>
-          <div class="grid-inputs">
-            <img [src]="srcResult != null ? srcResult : './assets/blank-profile.png'" class ="profile-img">
-              <button type="button" mat-raised-button (click)="fileInput.click()">Choose a profile photo</button>
-              <input hidden (change)="onFileSelected($event)" type="file" #fileInput id="file" >
-             
-             
-              <button type="submit" mat-stroked-button color="primary">
-                Register
-             </button>
           
-            </div>
-      
-            <mat-spinner [diameter]="35" *ngIf="loading"></mat-spinner>
+          <!--Register field inputs-->  
+          <div class="grid-inputs">
+            <app-input [propertyName]="'Name'" [inputValue]="'name'" 
+              [formChild]="form"></app-input>
 
+            <app-input [propertyName]="'Last name'" [inputValue]="'lastName'"
+              [formChild]="form"></app-input>
+
+            <app-input [fieldType]="'date'" [propertyName]="'Birthday'" [inputValue]="'birthDay'" 
+              [formChild]="form"></app-input>
+
+            <app-input [fieldType]="'email'" [propertyName]="'Email'" [inputValue]="'email'" 
+              [formChild]="form"></app-input>
+
+            <app-input [fieldType]="'password'" [propertyName]="'Password'" [inputValue]="'password'"
+              [formChild]="form"></app-input>
+
+            <app-input [fieldType]="'password'" [propertyName]="'Confirm Password'" [inputValue]="'password'"
+              [formChild]="form"></app-input>
+            </div>
+            
+            <!-- end -->  
+            
+           <!--Profile photo -->
+            <div class="grid-inputs">
+            <img [src]="srcResult != null ? srcResult : './assets/blank-profile.png'" class="profile-img">
+            <button type="button" mat-raised-button (click)="fileInput.click()">Choose a profile photo</button>
+            <input hidden (change)="onFileSelected($event)" type="file" #fileInput id="file">
+              <!-- end -->
+           
+              <button type="submit" mat-raised-button color="primary">
+              Register
+            </button>
+
+          </div>
+            <mat-spinner [diameter]="35" *ngIf="loading"></mat-spinner>
+          
         </div>
       </form>
     </div>
   </div>
 </div>
-

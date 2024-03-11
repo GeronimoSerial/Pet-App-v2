@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup,FormArray, FormControl, Validator } from '@angular/forms';
+// import { MatDatepicker } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-input',
@@ -7,20 +8,18 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent {
+  hide = true;
   @Input() propertyName: string;
   @Input() inputValue: string;
   @Input() formChild: FormGroup;
-  @Input() isDateField: boolean;
-  @Input() isEmailField: boolean;
-  @Input() isPwdField: boolean;
+  @Input() fieldType: string;
+  formControl: any;
+  form: any;
 
-  fieldType(): string {
-    if (this.isEmailField) {
-      return "email";
-    } else if (this.isPwdField) {
-      return "password"; 
-    } else {
-      return "text";
-    }
-  }
+  // @Input() isPwdField: boolean = false;
+  // @Input() isEmailField: boolean;
+  // @Input() isPwdField: boolean;
+
+
+
 }

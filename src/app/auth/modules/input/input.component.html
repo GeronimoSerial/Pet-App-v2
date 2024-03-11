@@ -1,23 +1,26 @@
-<!-- input.component.html -->
-<mat-form-field appearance="outline">
-    <mat-label>{{ propertyName }}</mat-label>
-    <input matInput [type]="fieldType()" [formControl]="formChild.controls[inputValue]">    
-      <mat-error *ngIf="formChild.controls[inputValue].hasError('required')">
-        {{ propertyName }} is required
-      </mat-error> 
-    
-</mat-form-field>
+<!-- Password field component -->
 
-<mat-form-field appearance="outline" *ngIf="fieldType() == 'date'">
+<ng-container *ngIf="[fieldType]=='password'; else commonField">
+  <mat-form-field appearance="outline" style="width: 100%;">
     <mat-label>{{ propertyName }}</mat-label>
-    <input matInput [matDatepicker]="datepicker" [formControl]="formChild.controls[inputValue]">
-    <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
-    <mat-datepicker #datepicker></mat-datepicker>
-    <mat-error *ngIf="formChild.controls['birthDay'].hasError('required')">
-      Birthday is required
+    <input matInput [type]="hide ? 'password' : 'text'" [formControl]="formChild.controls[inputValue]" autocomplete="on">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-error *ngIf="formChild.controls[inputValue].hasError('required')">
+      {{  propertyName  }} is required
     </mat-error>
   </mat-form-field>
+</ng-container>
 
-
-  
-  
+<!--Regular fields-->
+<ng-template #commonField>
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>{{ propertyName }}</mat-label>
+    <input matInput [type]="fieldType" [formControl]="formChild.controls[inputValue]">
+    <mat-error *ngIf="formChild.controls[inputValue].hasError('required')">
+      {{ propertyName }} is required
+    </mat-error>   
+  </mat-form-field> 
+</ng-template>
