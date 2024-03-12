@@ -10,6 +10,7 @@ export class RegisterComponent {
   form: FormGroup;
   loading = false;
   srcResult: any;
+  hide = false;
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -20,13 +21,13 @@ export class RegisterComponent {
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
     })
-    debugger
+    
   }
 
   registerUser() {
     // this.loading = true;
     console.log(this.form.value);
-    debugger
+    
   }
   onFileSelected(event: any) {
     const file: File = event.target.files[0];

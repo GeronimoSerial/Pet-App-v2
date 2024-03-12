@@ -19,6 +19,10 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { InputComponent } from './auth/modules/input/input.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalComponent } from './modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     ForgotPasswordComponent,
     NavbarComponent,
     NotFoundComponent,
-    InputComponent
+    InputComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    MatDialogModule
   ],
   providers: [
     provideClientHydration(),

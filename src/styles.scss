@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 .flex-around-center {
     display: flex;
@@ -28,6 +29,10 @@
   }
   body {
     margin: 0;
+    // background: rgb(73,74,71);
+    // background: linear-gradient(100deg, rgba(73,74,71,1) 40%, rgba(255,255,255,1) 100%);
     font-family: Roboto, "Helvetica Neue", sans-serif;
   }
   
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

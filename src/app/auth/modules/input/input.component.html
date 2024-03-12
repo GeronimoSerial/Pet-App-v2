@@ -1,6 +1,26 @@
-<!-- Password field component -->
+<ng-container *ngIf="[fieldType] =='password'; else commonField">
+  <div class="form-floating">
+    <input type="password" [formControl]="formChild.controls[inputValue]" id="floatingPassword" [ngClass]="{'form-control': true, 'is-invalid': formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched}"> 
+     <label for="floatingPassword">{{propertyName}}</label>
+  </div>
+</ng-container>
 
-<ng-container *ngIf="[fieldType]=='password'; else commonField">
+<ng-template #commonField>
+  <div class="form-floating mb-3">
+    <input [type]="fieldType" [formControl]="formChild.controls[inputValue]" id="floatingInput"[ngClass]="{'form-control': true, 'is-invalid': formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched}">
+    <label for="floatingInput">{{propertyName}}</label>
+    <div *ngIf="formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched" class="invalid-feedback">
+      Please choose a {{propertyName}}
+    </div>
+  </div>  
+</ng-template>
+
+
+
+
+
+<!-- Password field component -->
+<!-- <ng-container *ngIf="[fieldType]=='password'; else commonField">
   <mat-form-field appearance="outline" style="width: 100%;">
     <mat-label>{{ propertyName }}</mat-label>
     <input matInput [type]="hide ? 'password' : 'text'" [formControl]="formChild.controls[inputValue]" autocomplete="on">
@@ -12,10 +32,10 @@
       {{ propertyName }} is required
     </mat-error>
   </mat-form-field>
-</ng-container>
+</ng-container> -->
 
 <!--Regular fields-->
-<ng-template #commonField>
+<!-- <ng-template #commonField>
   <mat-form-field appearance="outline" style="width: 100%;">
     <mat-label>{{ propertyName }}</mat-label>
     <input matInput [type]="fieldType" [formControl]="formChild.controls[inputValue]">
@@ -23,4 +43,4 @@
       {{ propertyName }} is required
     </mat-error>   
   </mat-form-field> 
-</ng-template>
+</ng-template> -->
