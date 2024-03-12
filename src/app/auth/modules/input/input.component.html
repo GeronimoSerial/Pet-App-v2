@@ -9,7 +9,7 @@
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
     <mat-error *ngIf="formChild.controls[inputValue].hasError('required')">
-      {{  propertyName  }} is required
+      {{ propertyName }} is required
     </mat-error>
   </mat-form-field>
 </ng-container>

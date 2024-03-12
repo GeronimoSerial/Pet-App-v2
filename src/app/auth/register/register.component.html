@@ -25,24 +25,22 @@
             <app-input [fieldType]="'password'" [propertyName]="'Password'" [inputValue]="'password'"
               [formChild]="form"></app-input>
 
-            <app-input [fieldType]="'password'" [propertyName]="'Confirm Password'" [inputValue]="'password'"
-              [formChild]="form"></app-input>
+              <app-input [fieldType]="'password'" [propertyName]="'Confirm Password'" [inputValue]="'confirmPassword'" [formChild]="form"></app-input>            
             </div>
+              <!-- end -->  
             
-            <!-- end -->  
-            
-           <!--Profile photo -->
+           <!--Profile photo --> 
             <div class="grid-inputs">
             <img [src]="srcResult != null ? srcResult : './assets/blank-profile.png'" class="profile-img">
             <button type="button" mat-raised-button (click)="fileInput.click()">Choose a profile photo</button>
             <input hidden (change)="onFileSelected($event)" type="file" #fileInput id="file">
+           
               <!-- end -->
            
               <button type="submit" mat-raised-button color="primary">
               Register
-            </button>
-
-          </div>
+              </button>
+            </div>
             <mat-spinner [diameter]="35" *ngIf="loading"></mat-spinner>
           
         </div>
