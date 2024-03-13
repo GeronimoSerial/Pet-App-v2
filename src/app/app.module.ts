@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DarkModeComponent } from './dark-mode/dark-mode.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     NotFoundComponent,
     InputComponent,
     ModalComponent,
+    DarkModeComponent,
   ],
   imports: [
     BrowserModule,

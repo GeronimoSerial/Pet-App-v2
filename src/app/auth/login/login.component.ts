@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, AfterViewInit} from '@angular/core';
+import   Typeit   from 'typeit';
 import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../core/models/user';
 
@@ -7,11 +8,27 @@ import { User } from '../../core/models/user';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit{
-  text = '';
-  completeText= 'Empowering pet parents, one paw at a time. 🐾';
-  speed = 100;
-  i = 0;
+export class LoginComponent implements AfterViewInit{
+  ngAfterViewInit() {
+    new Typeit('#type-effect', {
+      speed: 70,
+      startDelay: 900,
+      cursor: false
+    })
+    .type("Empowering pet owners", { delay: 300 })
+    .pause(500)
+    .delete(6)
+    .type("parents", { delay: 150 })
+    .pause(500)
+    .type(", one paw at a time. 🐕")
+    .pause(1000)
+    .delete(1)
+    .type("🐈")
+    .pause(1000)
+    .delete(1)
+    .type(" 🐾")
+    .go();
+  }
   form: FormGroup;
   loading = false;
   userClass: User;
@@ -38,27 +55,10 @@ export class LoginComponent implements OnInit{
     localStorage.removeItem('session');
     
   }
-  
-  ngOnInit() {
-    this.writeEffect();
-    
-  }
 
   cancelSpinner() {
     setTimeout(() => {
       this.loading = false;
     }, 1500)
-  }
-
-
-   writeEffect(){
-    if (this.i  < this.completeText.length) {
-      this.text += this.completeText.charAt(this.i);
-      this.i++;
-      setTimeout(() => {
-        this.writeEffect();
-      }, this.speed);
-      
-    }
   }
 }
