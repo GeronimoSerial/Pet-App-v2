@@ -28,9 +28,11 @@
          <div class="profile-img-container">
            <img [src]="srcResult != null ? srcResult: './assets/blank-profile.png'" class="profile-img">
          </div>
-         <button type="button" class="btn btn-secondary" (click)="fileInput.click()"> Choose a profile photo</button>
-         <input hidden (change)="onFileSelected($event)" type="file" #fileInput class="form-control" id="file">
-       </div>
+         <div class="mb-3">
+          <button type="button" class="btn btn-outline-secondary btn-sm" (click)="fileInput.click()"> Choose a profile photo</button>
+          <input hidden (change)="onFileSelected($event)" type="file" #fileInput class="form-control" id="file">
+        </div>
+        </div>
        <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-outline-primary btn-sm">Register</button>

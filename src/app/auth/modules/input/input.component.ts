@@ -15,11 +15,4 @@ export class InputComponent {
   @Input() fieldType: string;
   formControl: any;
   form: any;
-
-  // @Input() isPwdField: boolean = false;
-  // @Input() isEmailField: boolean;
-  // @Input() isPwdField: boolean;
-
-
-
 }

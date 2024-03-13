@@ -2,7 +2,6 @@ import {Component, AfterViewInit} from '@angular/core';
 import   Typeit   from 'typeit';
 import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../core/models/user';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

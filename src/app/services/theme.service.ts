@@ -7,7 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 export class ThemeService {
   private theme = new BehaviorSubject('light');
   currentTheme = this.theme.asObservable();
-  constructor() { }
+  constructor() { 
+  }
 
   changeTheme(theme: string) {
     this.theme.next(theme);

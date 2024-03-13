@@ -1,46 +1,16 @@
 <ng-container *ngIf="[fieldType] =='password'; else commonField">
-  <div class="form-floating">
-    <input type="password" [formControl]="formChild.controls[inputValue]" id="floatingPassword" [ngClass]="{'form-control': true, 'is-invalid': formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched}"> 
+  <div class="form-floating ">
+    <input type="password" [formControl]="formChild.controls[inputValue]" id="floatingPassword" [ngClass]="{'form-control': true, 'is-invalid': formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched}" class="form-control-sm"> 
      <label for="floatingPassword">{{propertyName}}</label>
   </div>
 </ng-container>
 
 <ng-template #commonField>
   <div class="form-floating mb-3">
-    <input [type]="fieldType" [formControl]="formChild.controls[inputValue]" id="floatingInput"[ngClass]="{'form-control': true, 'is-invalid': formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched}">
+    <input [type]="fieldType" [formControl]="formChild.controls[inputValue]" id="floatingInput"[ngClass]="{'form-control': true, 'is-invalid': formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched}" class="form-control-sm">
     <label for="floatingInput">{{propertyName}}</label>
     <div *ngIf="formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched" class="invalid-feedback">
       Please choose a {{propertyName}}
     </div>
   </div>  
 </ng-template>
-
-
-
-
-
-<!-- Password field component -->
-<!-- <ng-container *ngIf="[fieldType]=='password'; else commonField">
-  <mat-form-field appearance="outline" style="width: 100%;">
-    <mat-label>{{ propertyName }}</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" [formControl]="formChild.controls[inputValue]" autocomplete="on">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-      [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-    <mat-error *ngIf="formChild.controls[inputValue].hasError('required')">
-      {{ propertyName }} is required
-    </mat-error>
-  </mat-form-field>
-</ng-container> -->
-
-<!--Regular fields-->
-<!-- <ng-template #commonField>
-  <mat-form-field appearance="outline" style="width: 100%;">
-    <mat-label>{{ propertyName }}</mat-label>
-    <input matInput [type]="fieldType" [formControl]="formChild.controls[inputValue]">
-    <mat-error *ngIf="formChild.controls[inputValue].hasError('required')">
-      {{ propertyName }} is required
-    </mat-error>   
-  </mat-form-field> 
-</ng-template> -->

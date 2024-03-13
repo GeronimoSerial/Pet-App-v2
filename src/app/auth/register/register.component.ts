@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { InputComponent } from '../modules/input/input.component';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
