@@ -4,35 +4,55 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { HomeComponent } from './pages/home/home.component';
+import { loginGuard } from './core/guards/login.guard';
+import { accessGuard } from './core/guards/access.guard';
 
 const routes: Routes = [
   {
-    path: 'login',
-    canActivate:[], 
-    component: LoginComponent
-  },
+    path: 'auth',
+    canActivate: [loginGuard],
+    children: [
+      {
+        path: 'login',
+        canActivate: [],
+        component: LoginComponent,
+      },
 
-  {
-    path: 'register', 
-    component: RegisterComponent
+      {
+        path: 'register',
+        component: RegisterComponent,
+      },
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent,
+      },
+    ],
   },
   {
-    path: 'forgot-password',
-    component: ForgotPasswordComponent
+    path: 'pages',
+    canActivate: [accessGuard],
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent
+      }
+    ]
   },
   {
     path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
+    redirectTo: 'pages/home',
+    pathMatch: 'full',
   },
+  
   {
     path: '**',
-    component: NotFoundComponent
-  }
+    component: NotFoundComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

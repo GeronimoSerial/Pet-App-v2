@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/scss/bootstrap";
+// @import "../node_modules/bootstrap/scss/bootstrap";
 
 .flex-around-center {
     display: flex;
@@ -29,10 +29,10 @@
   }
   body {
     margin: 0;
-      background-image: url('assets/pet-logo.png');
-      background-repeat: no-repeat;
-      background-position: 60px 140px;
-      background-size: 330px 330px;
+      // background-image: url('assets/pet-logo.png');
+      // background-repeat: no-repeat;
+      // background-position: relative 1px 200px ;
+      // background-size: 330px 330px;
     // background: rgb(73,74,71);
     // background: linear-gradient(100deg, rgba(73,74,71,1) 40%, rgba(255,255,255,1) 100%);
     font-family: Roboto, "Helvetica Neue", sans-serif;

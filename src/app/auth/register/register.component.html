@@ -1,40 +1,121 @@
-     <form [formGroup]="form" (ngSubmit)="form.valid && registerUser()" class="needs-validation">
+<form
+  [formGroup]="form"
+  (ngSubmit)="form.valid && registerUser()"
+  class="needs-validation"
+>
+  <div class="mb-3">
+    <app-input
+      [fieldType]="'text'"
+      [propertyName]="'Name*'"
+      [inputValue]="'name'"
+      [loading]="loading"
+      [formChild]="form"
+    ></app-input>
+  </div>
+  <div class="mb-3">
+    <app-input
+      [fieldType]="'text'"
+      [propertyName]="'Last Name*'"
+      [inputValue]="'lastName'"
+      [loading]="loading"
+      [formChild]="form"
+    >
+    </app-input>
+  </div>
+  <div class="mb-3">
+    <app-input
+      [fieldType]="'date'"
+      [propertyName]="'Birthday*'"
+      [inputValue]="'birthDay'"
+      [loading]="loading"
+      [formChild]="form"
+    >
+    </app-input>
+  </div>
 
-       <div class="mb-3">
-         <app-input [fieldType]="'text'" [propertyName]="'Name*'" [inputValue]="'name'" [formChild]="form"></app-input>
-       </div>
-       <div class="mb-3">
-         <app-input [fieldType]="'text'" [propertyName]="'Last Name*'" [inputValue]="'lastName'" [formChild]="form">
-         </app-input>
-       </div>
-       <div class="mb-3">
-         <app-input [fieldType]="'date'" [propertyName]="'Birthday*'" [inputValue]="'birthDay'" [formChild]="form">
-         </app-input>
-       </div>
+  <div class="mb-3">
+    <app-input
+      [fieldType]="'email'"
+      [propertyName]="'Email*'"
+      [inputValue]="'email'"
+      [loading]="loading"
+      [formChild]="form"
+    >
+    </app-input>
+  </div>
+  <div class="mb-3">
+    <app-input
+      [fieldType]="'password'"
+      [propertyName]="'Password*'"
+      [inputValue]="'password'"
+      [loading]="loading"
+      [formChild]="form"
+    >
+    </app-input>
+  </div>
+  <div class="mb-3">
+    <app-input
+      [fieldType]="'password'"
+      [propertyName]="'Confirm Password*'"
+      [inputValue]="'confirmPassword'"
+      [loading]="loading"
+      [formChild]="form"
+    ></app-input>
+  </div>
+  <div class="mb-3 position-relative">
+    <div class="profile-img-container">
+      <img
+        [src]="srcResult != null ? srcResult : './assets/blank-profile.png'"
+        class="profile-img"
+      />
+    </div>
+    <div class="mb-3">
+      <button
+        type="button"
+        [disabled]="loading"
+        class="btn btn-outline-secondary btn-sm"
+        (click)="fileInput.click()"
+      >
+        Choose a profile photo
+      </button>
+      <input
+        hidden
+        (change)="onFileSelected($event)"
+        type="file"
+        #fileInput
+        class="form-control"
+        id="file"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-secondary btn-sm"
+      data-bs-dismiss="modal"
+    >
+      Close
+    </button>
+    
 
-       <div class="mb-3">
-         <app-input [fieldType]="'email'" [propertyName]="'Email*'" [inputValue]="'email'" [formChild]="form">
-         </app-input>
-       </div>
-       <div class="mb-3">
-         <app-input [fieldType]="'password'" [propertyName]="'Password*'" [inputValue]="'password'" [formChild]="form">
-         </app-input>
-       </div>
-       <div class="mb-3">
-         <app-input [fieldType]="'password'" [propertyName]="'Confirm Password*'" [inputValue]="'confirmPassword'"
-           [formChild]="form"></app-input>
-       </div>
-       <div class="mb-3 position-relative">
-         <div class="profile-img-container">
-           <img [src]="srcResult != null ? srcResult: './assets/blank-profile.png'" class="profile-img">
-         </div>
-         <div class="mb-3">
-          <button type="button" class="btn btn-outline-secondary btn-sm" (click)="fileInput.click()"> Choose a profile photo</button>
-          <input hidden (change)="onFileSelected($event)" type="file" #fileInput class="form-control" id="file">
-        </div>
-        </div>
-       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-outline-primary btn-sm">Register</button>
-      </div>
-      </form>
+      @if (loading) {
+        <button class="btn btn-outline-primary btn-sm" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Loading...
+        </button>
+      }
+      @else {
+        <button type="submit" [disabled]="loading" class="btn btn-outline-primary btn-sm">
+             Register
+         </button>
+     
+      }
+    
+  
+  
+    <!-- <button class="btn btn-primary" type="button" disabled>
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      Loading...
+    </button> -->
+  </div>
+</form>

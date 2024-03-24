@@ -25,7 +25,7 @@ export class RegisterComponent {
   }
 
   registerUser() {
-    // this.loading = true;
+    this.loading = true;
     console.log(this.form.value);
     
   }

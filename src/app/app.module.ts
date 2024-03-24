@@ -23,6 +23,8 @@ import { ModalComponent } from './modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DarkModeComponent } from './dark-mode/dark-mode.component';
+import { HomeComponent } from './pages/home/home.component';
+export declare var TypeIt: any;
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import { DarkModeComponent } from './dark-mode/dark-mode.component';
     InputComponent,
     ModalComponent,
     DarkModeComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { DarkModeComponent } from './dark-mode/dark-mode.component';
     MatIconModule,
     HttpClientModule,
     NgbModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),

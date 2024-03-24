@@ -1,16 +1,61 @@
-<ng-container *ngIf="[fieldType] =='password'; else commonField">
-  <div class="form-floating ">
-    <input type="password" [formControl]="formChild.controls[inputValue]" id="floatingPassword" [ngClass]="{'form-control': true, 'is-invalid': formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched}" class="form-control-sm"> 
-     <label for="floatingPassword">{{propertyName}}</label>
-  </div>
-</ng-container>
 
-<ng-template #commonField>
-  <div class="form-floating mb-3">
-    <input [type]="fieldType" [formControl]="formChild.controls[inputValue]" id="floatingInput"[ngClass]="{'form-control': true, 'is-invalid': formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched}" class="form-control-sm">
-    <label for="floatingInput">{{propertyName}}</label>
-    <div *ngIf="formChild.controls[inputValue].hasError('required') && formChild.controls[inputValue].touched" class="invalid-feedback">
-      Please choose a {{propertyName}}
+
+  @if ([fieldType] == 'password') {
+
+    <div class="form-floating">
+      <input
+        type="password"
+        [formControl]="formChild.controls[inputValue]"
+        id="floatingPassword"
+        [ngClass]="{
+          'form-control': true,
+          'is-invalid':
+            formChild.controls[inputValue].hasError('required') &&
+            formChild.controls[inputValue].touched
+        }"
+        class="form-control-sm"
+        [readOnly]="loading"
+      />
+      
+      <label for="floatingInput">{{ propertyName }}</label>
+      <div
+        *ngIf="
+          formChild.controls[inputValue].hasError('required') &&
+          formChild.controls[inputValue].touched
+        "
+        class="invalid-feedback"
+        >
+        Please choose a {{ propertyName }}
+      </div>
     </div>
-  </div>  
-</ng-template>
+  }
+
+
+  @else {
+    
+    <div class="form-floating mb-3">
+      <input
+        [type]="fieldType"
+        [formControl]="formChild.controls[inputValue]"
+        id="floatingInput"
+        [ngClass]="{
+          'form-control': true,
+          'is-invalid':
+            formChild.controls[inputValue].hasError('required') &&
+            formChild.controls[inputValue].touched
+        }"
+        class="form-control-sm"
+        [readOnly]="loading"
+      />
+      <label for="floatingInput">{{ propertyName }}</label>
+      <div
+        *ngIf="
+          formChild.controls[inputValue].hasError('required') &&
+          formChild.controls[inputValue].touched
+        "
+        class="invalid-feedback"
+        >
+        Please choose a {{ propertyName }}
+      </div>
+    </div>
+  }

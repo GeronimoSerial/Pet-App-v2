@@ -13,6 +13,7 @@ export class InputComponent {
   @Input() inputValue: string;
   @Input() formChild: FormGroup;
   @Input() fieldType: string;
+  @Input() loading = false;
   formControl: any;
   form: any;
 }
