@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/users/auth.service';
+import { UserRegister } from '../../core/models/user';
 
 @Component({
   selector: 'app-register',
@@ -11,21 +13,34 @@ export class RegisterComponent {
   loading = false;
   srcResult: any;
   hide = false;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
     this.form = this.fb.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
-      birthDay: ['', Validators.required],
+      birthday: ['', Validators.required],
       profilePhoto: [],
       email: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', Validators.required],
+    }, 
+    {
+      validators: this.passwordMatchValidator
+        
+     
     })
     
   }
 
   registerUser() {
-    this.loading = true;
+    var userToRegister: UserRegister = {
+      username: this.form.get('email').value,
+      password:this.form.get('password').value,
+      name:this.form.get('name').value,
+      lastname:this.form.get('lastName').value,
+      birthday:this.form.get('birthday').value
+    }
+    return this.authService.register(userToRegister);
+    
     console.log(this.form.value);
     
   }
@@ -39,5 +54,16 @@ export class RegisterComponent {
     }
     
     reader.readAsDataURL(file);
+  }
+
+  passwordMatchValidator(formGroup: FormGroup){
+    const passwordControl = formGroup.get('password');
+    const confirmPasswordControl = formGroup.get( 'confirmPassword');
+    if (passwordControl.value == confirmPasswordControl.value) {
+      confirmPasswordControl.setErrors(null);
+    }
+    else{
+      confirmPasswordControl.setErrors({mismatch: true});
+    }
   }
 }

@@ -5,6 +5,7 @@ import { User, UserLogin } from '../../core/models/user';
 import { AuthService } from '../../services/users/auth.service';
 import { Router } from '@angular/router';
 import { response } from 'express';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,8 +14,9 @@ import { response } from 'express';
 export class LoginComponent implements AfterViewInit {
   ngAfterViewInit() {
     new Typeit('#type-effect', {
-      speed: 40,
+      speed: 50,
       startDelay: 900,
+      deleteSpeed: 150,
       cursor: false,
     })
       .type('Empowering pet owners', { delay: 300 })
@@ -34,16 +36,12 @@ export class LoginComponent implements AfterViewInit {
   form: FormGroup;
   loading = false;
   userClass: User;
-  constructor(private fb: FormBuilder, private authService: AuthService, private route: Router) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private route: Router, private toastr: ToastrService) {
     this.form = this.fb.group({
       email: [, Validators.required],
       password: [, Validators.required],
     });
     
-   
-
-  
-  
   
   }
 
@@ -52,15 +50,20 @@ export class LoginComponent implements AfterViewInit {
     this.cancelSpinner();
     
     var userData : UserLogin = {
-      email: this.form.get('email').value,
+      username: this.form.get('email').value,
       password: this.form.get('password').value
     };
     
     this.authService.login(userData).subscribe({
       next:response => {
-
+        this.route.navigate(['pages/home']);
+        this.loading = false;
       },
-      error:  (error) => {},
+      error:  (error) => {
+        this.toastr.error(error.error.message);
+        console.log(error);
+        this.loading = false;
+      },
       complete: () => {}
     })
   //   var userSession = localStorage.getItem('session');

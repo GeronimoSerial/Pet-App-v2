@@ -5,14 +5,17 @@ export class User {
 
 
 export interface UserRegister {
-
-
+    username: string,
+    password: string,
+    name: string,
+    lastname: string,
+    birthday: Date
 
 }
 
 
 export interface UserLogin{
-    email: string;
+    username: string;
     password: string;
 }
 

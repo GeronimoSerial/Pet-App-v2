@@ -24,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DarkModeComponent } from './dark-mode/dark-mode.component';
 import { HomeComponent } from './pages/home/home.component';
-export declare var TypeIt: any;
+import {ToastrModule} from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,9 @@ export declare var TypeIt: any;
     HttpClientModule,
     NgbModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
+    
   ],
   providers: [
     provideClientHydration(),
