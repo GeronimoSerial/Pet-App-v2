@@ -1,61 +1,62 @@
+<div class="form-floating">
+  <input
+  [type]="type"
+  id="floatingInputGrid"
+  value="{{propertyName}}"
+  placeholder="{{propertyName}}"
+  [formControl]="formChild.controls[inputValue]"
+  [ngClass]="{
+    'form-control': true,
+    'is-invalid':
+    formChild.controls[inputValue].errors &&
+    formChild.controls[inputValue].touched
+  }"
+  class="form-control form-control-sm"
+  [readOnly]="loading"
+  >
+  <label for="floatingInputGrid text-body-secondary">{{propertyName}}</label>
+  <div
+  *ngIf="
+    formChild.controls[inputValue].errors &&
+    formChild.controls[inputValue].touched
+    "
+  class="invalid-feedback"
+  >
+  <span *ngFor="let error of getErrors(formChild.controls[inputValue])" class="fw-medium fst-italic">
+    {{ error }} 
+  </span>
+</div>
+</div>
 
 
-  @if ([fieldType] == 'password') {
-
-    <div class="form-floating">
-      <input
-        type="password"
-        [formControl]="formChild.controls[inputValue]"
-        id="floatingPassword"
-        [ngClass]="{
-          'form-control': true,
-          'is-invalid':
-            formChild.controls[inputValue].hasError('required') &&
-            formChild.controls[inputValue].touched
-        }"
-        class="form-control-sm"
-        [readOnly]="loading"
-      />
-      
-      <label for="floatingInput">{{ propertyName }}</label>
-      <div
-        *ngIf="
-          formChild.controls[inputValue].hasError('required') &&
+<!-- @else {
+  
+  <div class="form-label mb-3">
+    <input
+      [type]="type"
+      [formControl]="formChild.controls[inputValue]"
+      id="floatingInput"
+      [ngClass]="{
+        'form-control': true,
+        'is-invalid':
+          formChild.controls[inputValue].errors &&
           formChild.controls[inputValue].touched
-        "
-        class="invalid-feedback"
-        >
-        Please choose a {{ propertyName }}
-      </div>
+      }"
+      class="form-control-sm"
+      [readOnly]="loading"
+    />
+    <label for="floatingInput">{{ propertyName }}</label>
+    <div
+      *ngIf="
+        formChild.controls[inputValue].errors &&
+        formChild.controls[inputValue].touched
+      "
+      class="invalid-feedback"
+      >
+      <span *ngFor="let error of getErrors(formChild.controls[inputValue])">
+        {{ error }} 
+      </span>
+        
     </div>
-  }
-
-
-  @else {
-    
-    <div class="form-floating mb-3">
-      <input
-        [type]="fieldType"
-        [formControl]="formChild.controls[inputValue]"
-        id="floatingInput"
-        [ngClass]="{
-          'form-control': true,
-          'is-invalid':
-            formChild.controls[inputValue].hasError('required') &&
-            formChild.controls[inputValue].touched
-        }"
-        class="form-control-sm"
-        [readOnly]="loading"
-      />
-      <label for="floatingInput">{{ propertyName }}</label>
-      <div
-        *ngIf="
-          formChild.controls[inputValue].hasError('required') &&
-          formChild.controls[inputValue].touched
-        "
-        class="invalid-feedback"
-        >
-        Please choose a {{ propertyName }}
-      </div>
-    </div>
-  }
+  </div>
+} -->

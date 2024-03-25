@@ -1,16 +1,23 @@
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header d-flex align-items-center justify-content-between">
-            <div class="logo-div mt-3">
-                <img class="logo-image" src="./assets/pet-logo.png" />
-            </div>
-            <h1 class="modal-title fs-5 fw-light text-center flex-grow-1" id="staticBackdropLabel">Register</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header py-1 d-flex align-items-center justify-content-between">
+        <div>
+          <h1 class="modal-title text-left fs-3 fw-semibold py-1 mt-3 mb-1">Sign Up</h1>
+          <p class="text-body-secondary">
+            It's quick and easy. 🐣
+          </p>
         </div>
-        <div class="modal-body">
-                <app-register></app-register>
-              </div>
-            </div>
-          </div>
+        <button type="button" class="btn-close p-2" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-register></app-register>
+        <div class="d-grid gap-2">
+          <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">
+            Close
+          </button>
         </div>
+      </div>
+    </div>
+  </div>
+</div>

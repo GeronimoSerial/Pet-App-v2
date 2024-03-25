@@ -3,30 +3,32 @@
   (ngSubmit)="form.valid && registerUser()"
   class="needs-validation"
 >
-  <div class="mb-3">
-    <app-input
-      [fieldType]="'text'"
-      [propertyName]="'Name*'"
-      [inputValue]="'name'"
-      [loading]="loading"
-      [formChild]="form"
-    ></app-input>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <app-input
+        [type]="'text'"
+        [propertyName]="'First name '"
+        [inputValue]="'name'"
+        [loading]="loading"
+        [formChild]="form"
+      ></app-input>
+    </div>
+    <div class="col-md-6 mb-3">
+      <app-input
+        [type]="'text'"
+        [propertyName]="'Last name '"
+        [inputValue]="'lastName'"
+        [loading]="loading"
+        [formChild]="form"
+      >
+      </app-input>
+    </div>
   </div>
   <div class="mb-3">
     <app-input
-      [fieldType]="'text'"
-      [propertyName]="'Last Name*'"
-      [inputValue]="'lastName'"
-      [loading]="loading"
-      [formChild]="form"
-    >
-    </app-input>
-  </div>
-  <div class="mb-3">
-    <app-input
-      [fieldType]="'date'"
-      [propertyName]="'Birthday*'"
-      [inputValue]="'birthDay'"
+      [type]="'date'"
+      [propertyName]="'Birthday '"
+      [inputValue]="'birthday'"
       [loading]="loading"
       [formChild]="form"
     >
@@ -35,8 +37,8 @@
 
   <div class="mb-3">
     <app-input
-      [fieldType]="'email'"
-      [propertyName]="'Email*'"
+      [type]="'email'"
+      [propertyName]="'Email '"
       [inputValue]="'email'"
       [loading]="loading"
       [formChild]="form"
@@ -45,8 +47,8 @@
   </div>
   <div class="mb-3">
     <app-input
-      [fieldType]="'password'"
-      [propertyName]="'Password*'"
+      [type]="'password'"
+      [propertyName]="'Password '"
       [inputValue]="'password'"
       [loading]="loading"
       [formChild]="form"
@@ -55,21 +57,56 @@
   </div>
   <div class="mb-3">
     <app-input
-      [fieldType]="'password'"
-      [propertyName]="'Confirm Password*'"
+      [type]="'password'"
+      [propertyName]="'Confirm Password'"
       [inputValue]="'confirmPassword'"
       [loading]="loading"
       [formChild]="form"
     ></app-input>
   </div>
+  <div class="mb-3">
+    <label
+      for="file"
+      class="form-label text-body-secondary justify-content-center"
+      >Choose a profile photo (either of yourself or your pet) </label
+    >
+    <input 
+    class="form-control form-control-sm" 
+    id="file"
+    type="file" />
+  </div>
   <div class="mb-3 position-relative">
-    <div class="profile-img-container">
+    <hr />
+    <div class="d-grid gap-2">
+      @if (loading) {
+      <button class="btn btn-primary btn-sm" type="button" disabled>
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        Loading...
+      </button>
+      } @else {
+      <button type="submit" [disabled]="loading" class="btn btn-primary btn-sm">
+        Register
+      </button>
+
+      }
+    </div>
+  </div>
+</form>
+<!-- <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+      </button> -->
+<!-- <div class="profile-img-container">
       <img
         [src]="srcResult != null ? srcResult : './assets/blank-profile.png'"
         class="profile-img"
       />
-    </div>
-    <div class="mb-3">
+    </div> -->
+<!-- <div class="mb-3">
       <button
         type="button"
         [disabled]="loading"
@@ -86,36 +123,4 @@
         class="form-control"
         id="file"
       />
-    </div>
-  </div>
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-outline-secondary btn-sm"
-      data-bs-dismiss="modal"
-    >
-      Close
-    </button>
-    
-
-      @if (loading) {
-        <button class="btn btn-outline-primary btn-sm" type="button" disabled>
-          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          Loading...
-        </button>
-      }
-      @else {
-        <button type="submit" [disabled]="loading" class="btn btn-outline-primary btn-sm">
-             Register
-         </button>
-     
-      }
-    
-  
-  
-    <!-- <button class="btn btn-primary" type="button" disabled>
-      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-      Loading...
-    </button> -->
-  </div>
-</form>
+    </div> -->
