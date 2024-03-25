@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ThemeService } from './theme-service/theme.service';
+import { ThemeService } from './theme-service/service/theme.service';
 
 @Component({
   selector: 'app-dark-mode',
@@ -7,6 +7,7 @@ import { ThemeService } from './theme-service/theme.service';
   styleUrl: './dark-mode.component.scss'
 })
 export class DarkModeComponent {
+
   constructor (private themeService: ThemeService){
 
   }
