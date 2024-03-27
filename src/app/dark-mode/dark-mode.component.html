@@ -1,3 +1,8 @@
 <button (click)="toggleTheme()" class="btn btn-sm dark-mode-toggle">
-    <img src="./assets/moon.svg" class="moon-icon" alt="">
+   @if (isDarkMode) {
+    <i class="pi pi-moon big-icon"></i>
+   }
+   @else {
+    <i class="pi pi-sun big-icon"></i>
+   }
 </button>

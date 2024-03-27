@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeService {
   private theme = new BehaviorSubject<string>(this.getInitialTheme());
   currentTheme = this.theme.asObservable();
-  constructor() { 
-  }
+  constructor() {}
 
   private getInitialTheme(): string {
     if (typeof localStorage !== 'undefined') {
@@ -16,11 +15,10 @@ export class ThemeService {
     } else {
       return 'light';
     }
-   
   }
 
   changeTheme(theme: string) {
-    if (typeof localStorage!== 'undefined') {
+    if (typeof localStorage !== 'undefined') {
       localStorage.setItem('theme', theme);
     }
     this.theme.next(theme);
