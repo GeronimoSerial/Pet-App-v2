@@ -14,7 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements AfterViewInit {
   ngAfterViewInit() {
     new Typeit('#type-effect', {
-      speed: 50,
+      speed: 40,
       startDelay: 900,
       deleteSpeed: 150,
       cursor: false,

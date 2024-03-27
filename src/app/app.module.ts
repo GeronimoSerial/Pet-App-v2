@@ -2,13 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule } from '@angular/material/input';
-import {MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatIconModule }  from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -21,10 +14,10 @@ import { InputComponent } from './auth/modules/input/input.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatDialogModule} from '@angular/material/dialog';
 import { DarkModeComponent } from './dark-mode/dark-mode.component';
 import { HomeComponent } from './pages/home/home.component';
 import {ToastrModule} from 'ngx-toastr';
+import {ToolbarModule} from 'primeng/toolbar';
 
 @NgModule({
   declarations: [
@@ -45,18 +38,11 @@ import {ToastrModule} from 'ngx-toastr';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatInputModule,
-    MatProgressSpinnerModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatIconModule,
     HttpClientModule,
     NgbModule,
-    MatDialogModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ToolbarModule
     
   ],
   providers: [
