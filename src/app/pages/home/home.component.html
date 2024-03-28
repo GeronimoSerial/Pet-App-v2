@@ -1,15 +1,42 @@
 <app-navbar></app-navbar>
 <div class="container mt-4">
-    <div class="row">
-        <div class="col">  
-            <div class="card">
-                <div class="card-body">
-                    <h4>Empty Page</h4>
-                    <p>This is your empty page template to start building beautiful applications.</p>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <mat-tab-group>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <span class="dark-mode">
+                  <mat-icon class="material-icons panel-icons">search</mat-icon>
+                  Search Pets
+                </span>
+              </ng-template>
+              <div class="card-body">
+                 <app-search-pets></app-search-pets> 
+              </div>
+            </mat-tab>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="material-icons panel-icons">upload</mat-icon>
+                Upload Pets
+              </ng-template>
+              <div class="card-body">   
+                <!-- <app-upload-pets></app-upload-pets> -->
+              </div>
+            </mat-tab>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="material-icons panel-icons">pets</mat-icon>
+                My Pets
+              </ng-template>
+              <div class="card-body">  
+                <!-- <app-my-pets></app-my-pets> -->
+              </div>
+            </mat-tab>
+          </mat-tab-group>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-
-
