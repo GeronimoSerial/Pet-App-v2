@@ -28,6 +28,8 @@ import {MatInput, MatInputModule} from '@angular/material/input';
 import {InputTextModule} from 'primeng/inputtext';
 import {MatSelect, MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+import { PopupComponent } from './pages/tabs-pages/search-pets/popup/popup.component';
 // import { HttpInterceptorService } from './core/interceptors/http.interceptor';
 
 
@@ -46,6 +48,7 @@ import {MatTableModule} from '@angular/material/table';
     SearchPetsComponent,
     UploadPetsComponent,
     MyPetsComponent,
+    PopupComponent,
 
   ],
   imports: [
@@ -68,7 +71,8 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogClose,
     InputTextModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ],
   providers: [
     provideClientHydration(),

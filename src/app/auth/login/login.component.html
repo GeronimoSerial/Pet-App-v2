@@ -67,7 +67,9 @@
             >
               Create new account
             </button>
-            <app-modal></app-modal>
+            @defer () {
+              <app-modal></app-modal>
+            }
           </div>
         </div>
       </div>

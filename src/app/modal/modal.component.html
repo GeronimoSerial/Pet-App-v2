@@ -26,11 +26,15 @@
         ></button>
       </div>
       <div class="modal-body">
-        <app-register></app-register>
+        @defer (on viewport) {
+          <app-register></app-register>
+        }@placeholder {
+          <div>Loading...</div>
+        }
         <div class="d-grid gap-2">
-          <!-- <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">
             Close
-          </button> -->
+          </button>
         </div>
       </div>
     </div>
