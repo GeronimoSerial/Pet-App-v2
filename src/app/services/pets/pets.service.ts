@@ -13,13 +13,19 @@ export class PetsService {
   constructor(private http: HttpClient, private route: Router) { 
   }
     publishPet(petData: PetsInterface){ 
-      return this.http.post(`${this.baseUrl}/Pets/AddPet`, petData);
+      return this.http.post(`${this.baseUrl}/pets/AddPet`, petData);
       
     }
     
     getPets(){
-      return this.http.get(`${this.baseUrl}/Pets/GetPets`);
+      return this.http.get(`${this.baseUrl}/pets/GetPets`);
   
+    }
+
+    getPetImage(imageName: any){
+      return this.http.get(`${this.baseUrl}/pets/GetPetImage/${imageName}`, 
+      {responseType: 'blob'}
+      );
     }
 
   
