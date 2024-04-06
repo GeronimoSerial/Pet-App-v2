@@ -12,6 +12,14 @@
 }
 
 
-.big-icon {
-    font-size: 1.5rem;
+
+button  {
+    border: none;
+    outline: none;
+    :hover{
+        cursor: pointer;
+        opacity: 0.5;
+        transition: 0.5s;
+        transform: scale(1.2);
+    }
 }
