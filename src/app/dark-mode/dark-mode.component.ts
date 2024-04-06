@@ -10,9 +10,19 @@ export class DarkModeComponent {
   isDarkMode = false;
   constructor(private themeService: ThemeService) {}
   toggleTheme() {
-    this.themeService.changeTheme(
-      document.body.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark'
-    );
-    this.isDarkMode =!this.isDarkMode;
+    let newTheme = this.isDarkMode ? 'light' : 'dark';
+    this.themeService.changeTheme(newTheme);
+  
+    if (newTheme === 'dark') {
+      document.body.classList.remove('light-theme');
+      document.body.classList.add('dark-theme');
+      document.body.setAttribute('data-bs-theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      document.body.classList.add('light-theme');
+      document.body.setAttribute('data-bs-theme', 'light');
+    }
+    this.isDarkMode = !this.isDarkMode;
   }
+  
 }
