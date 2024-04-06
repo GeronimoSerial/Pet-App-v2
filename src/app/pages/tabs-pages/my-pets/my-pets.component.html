@@ -1,3 +1,45 @@
-<p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum itaque accusantium, doloremque culpa nulla voluptate eius, dolor, quibusdam quisquam quod quis modi incidunt laudantium! Nisi vel reiciendis dolores delectus officiis?
-</p>
+<div class="container d-flex justify-content-center">
+  <div class="col">
+    <div
+      class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4"
+    >
+      <div class="input-group mb-3 mt-3">
+        <input
+          type="text"
+          id="search"
+          class="form-control col-md-6"
+          placeholder="🔍 Search Pet"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+ <div class="card-body">
+      <h4 class="card-title text-center fw-semibold">My added pets</h4>
+      <div class="scroll">
+            <table class="table">
+          <thead>
+            <tr>
+            <th scope="col">Id</th>
+            <th scope="col">userId</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pet of pets">
+            <td>{{ pet.id }}</td>
+            <td>{{ pet.userId }}</td>
+            <td>{{ pet.name }}</td>
+            <td>{{ pet.type }}</td>
+            <td>{{ pet.breed }}</td>
+            <td>{{ pet.birthday }}</td>
+            <td>{{ pet.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div> 
