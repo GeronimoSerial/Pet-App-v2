@@ -2,9 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { PetsService } from '../../../services/pets/pets.service';
 import { MessageService } from 'primeng/api';
 import { PetsInterface } from '../../../core/models/pet';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { PopupComponent } from './popup/popup.component';
+
+
+
+
 
 @Component({
   selector: 'app-search-pets',
@@ -13,15 +18,21 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 })
 export class SearchPetsComponent implements OnInit{
   pets: PetsInterface[] = [];
+  pet: PetsInterface;
   searchPet: string = '';
   filteredPets: PetsInterface[] = [];
   filters = ["Name", "Type", "Breed"];
   selectedFilter: string = 'Filters';
   data: PetsInterface[] = [];
+  dialogRef: MatDialogRef<any> | undefined;
+  imageUrl: any;
+  srcResult  = null; //Por ahora
+
 
   constructor(
     private petService: PetsService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private dialog: MatDialog
   ) {
     this.pets = []
     for (let i = 0; i < 50; i++) {
@@ -30,7 +41,8 @@ export class SearchPetsComponent implements OnInit{
         name: 'Pet' + i,
         type: 'Dog',
         breed: 'Breed' + i,
-        birthday: new Date(),
+        imageUrl: new FormData(),
+        birthday: new Date( ),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iusto sint at? Nostrum consequuntur accusamus, eveniet dolorem voluptatibus laboriosam libero voluptate, similique perferendis voluptas magni consectetur quia quam incidunt repellat         ' + i,
         userId: i,
       }
@@ -60,6 +72,13 @@ export class SearchPetsComponent implements OnInit{
     });
   }
 
+  petInfo(id:number){
+    this.dialogRef = this.dialog.open(PopupComponent, {
+      data: {
+        pet: this.pets.find(x => x.id === id)
+      },
+    })
+  }
   search(){
     console.log('search executed');
     const filterPets = this.pets.filter(pet => {
@@ -67,7 +86,16 @@ export class SearchPetsComponent implements OnInit{
     })
     this.filteredPets = filterPets;
   }
-  
+  getPetImage(){
+    this.petService.getPetImage(this.pet.imageUrl).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: err => {
+        console.log(err);
+      }
+    })
+  }
 }
 
 

@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrl: './upload-pets.component.scss'
 })
 export class UploadPetsComponent {
-
 }
