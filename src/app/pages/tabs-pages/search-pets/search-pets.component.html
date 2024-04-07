@@ -3,7 +3,7 @@
     <div
       class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4"
     >
-      <div class="input-group mb-3 mt-3" >
+      <div class="input-group mb-3 mt-3">
         <input
           type="text"
           id="search"
@@ -31,31 +31,56 @@
   </div>
 </div>
 <div class="card-body">
-  <h4 class="card-title text-center">Results</h4>
-  <div class="scroll">
-        <table class="table">
-      <thead>
-        <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">Type</th>
-        <th scope="col">Breed</th>
-        <th scope="col">Birthday</th>
-        <th scope="col">Description</th>
-        <th scope="col">userId</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let pet of pets">
-        <td>{{ pet.id }}</td>
-        <td>{{ pet.name }}</td>
-        <td>{{ pet.type }}</td>
-        <td>{{ pet.breed }}</td>
-        <td>{{ pet.birthday }}</td>
-        <td>{{ pet.description }}</td>
-        <td>{{ pet.userId }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <h4 class="card-title text-center fw-semibold">Search Results</h4>
 </div>
+<div class="scroll">
+  <div class="mb-3" *ngFor="let pet of pets">
+    <div class="card w-40 mx-auto" style="width: 18rem">
+      <div class="card-body">
+        <p class="d-flex">
+          <span class="fw-semibold">Name:</span
+          ><span class="ms-2">{{ pet.name }}</span>
+        </p>
+        <p class="d-flex">
+          <span class="fw-semibold">Type:</span
+          ><span class="ms-2">{{ pet.type }}</span>
+        </p>
+        <p class="d-flex">
+          <span class="fw-semibold">Breed:</span
+          ><span class="ms-2">{{ pet.breed }}</span>
+        </p>
+        <p class="d-flex">
+          <span class="fw-semibold">Birthday:</span
+          ><span class="ms-2">{{ pet.birthday }}</span>
+        </p>
+        <button class="search-button">View Info</button>
+        
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- <img
+          class="profile-img img-thumbnailrounded-float-end"
+          [src]="
+            srcResult !== null
+              ? srcResult
+              : '../../../../../../assets/blank-profile.png'
+          "
+        /> -->
+
+<!-- <mat-card *ngFor="let pet of pets" class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+      <mat-card-title>{{pet.name}}</mat-card-title>
+      <mat-card-subtitle>{{pet.type}}</mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <img mat-card-sm-image src="../../../../assets/blank-profile.png">
+  <mat-card-content>
+    <p><strong>Breed:</strong> {{pet.breed}}</p>
+    <p><strong>Birthday:</strong> {{pet.birthday | date}}</p>
+    <p>{{pet.description}}</p>
+  </mat-card-content>
+</mat-card> -->
+
