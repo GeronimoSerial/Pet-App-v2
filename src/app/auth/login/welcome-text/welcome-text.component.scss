@@ -1,0 +1,69 @@
+.welcome-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: #d9d2b9;
+  }
+
+
+  .word {
+    transition: opacity 1s;
+  }
+  
+  .fade-out {
+    animation: fadeout 1s forwards;
+  }
+  
+  @keyframes fadeout {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  
+  .fade-in {
+    animation: fadein 1s forwards;
+  }
+  
+  @keyframes fadein {
+    0% { opacity: 0; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+  
+// .changing::after {
+//     content: "owners ❌";
+//     animation: cambiar 20s linear infinite;
+//     transition: content  1s ease-in-out;
+//   }
+//   @keyframes cambiar {
+//     0% {
+//       content: "owners ❌";
+//     }
+//     33% {
+//       content: "parents ✔️";
+//     }
+//     67% {
+//       content: "lovers 😍";
+//     }
+//     100% {
+//       content: "owners ❌";
+//     }
+//   }
+
+
+//   #changing .word {
+//     position: absolute;
+//     opacity: 0;
+//     visibility: hidden;
+//     transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+//   }
+  
+//   #changing .word.visible {
+//     opacity: 1;
+//     visibility: visible;
+//   }
+  
