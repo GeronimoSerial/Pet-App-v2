@@ -14,7 +14,6 @@ import { InputComponent } from './auth/modules/input/input.component';
 import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { ModalComponent } from './modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DarkModeComponent } from './dark-mode/dark-mode.component';
 import { HomeComponent } from './pages/home/home.component';
 import {ToastrModule} from 'ngx-toastr';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -30,6 +29,7 @@ import {MatSelect, MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import { PopupComponent } from './pages/tabs-pages/search-pets/popup/popup.component';
+import { WelcomeTextComponent } from './auth/login/welcome-text/welcome-text.component';
 // import { HttpInterceptorService } from './core/interceptors/http.interceptor';
 
 
@@ -43,12 +43,12 @@ import { PopupComponent } from './pages/tabs-pages/search-pets/popup/popup.compo
     NotFoundComponent,
     InputComponent,
     ModalComponent,
-    DarkModeComponent,
     HomeComponent,
     SearchPetsComponent,
     UploadPetsComponent,
     MyPetsComponent,
     PopupComponent,
+    WelcomeTextComponent,
 
   ],
   imports: [
@@ -73,6 +73,7 @@ import { PopupComponent } from './pages/tabs-pages/search-pets/popup/popup.compo
     MatSelectModule,
     MatTableModule,
     MatCardModule
+    
   ],
   providers: [
     provideClientHydration(),
