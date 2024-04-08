@@ -12,19 +12,17 @@
 }
 
 .search-button {
-    border: none;
-    background-color: #777d83;
-    border-radius: 20px;
-    color: #ffffff;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    transition: transform 0.5s, opacity 0.5s;
+    background-color: #fff2f2;
+    border-radius: 25px;
+    padding: 8px 18px;
+    color: #000000;
+    border: 2px solid #fff2f2;
+    transition: all 0.3s ease;
     cursor: pointer;
     &:hover {
-        transform: scale(1);
-        opacity: 0.5;
+        background-color: #97D9E1;
+        border-color: #97D9E1;
+        box-shadow: 0px 0px 10px rgba(151, 217, 225, 0.5);
     }
 }
+

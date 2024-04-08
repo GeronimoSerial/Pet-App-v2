@@ -17,20 +17,17 @@ export class LoginComponent implements AfterViewInit {
       speed: 40,
       startDelay: 900,
       deleteSpeed: 150,
-      cursor: false,
+      cursorChar: "🐾",
+      afterComplete: function (instance){
+        instance.destroy();
+      }
     })
       .type('Empowering pet owners', { delay: 300 })
       .pause(500)
       .delete(6)
       .type('parents', { delay: 150 })
       .pause(500)
-      .type(', one paw at a time. 🐕')
-      .pause(1000)
-      .delete(1)
-      .type('🐈')
-      .pause(1000)
-      .delete(1)
-      .type(' 🐾')
+      .type(', one paw at a time. 🐈')
       .go();
   }
   form: FormGroup;
