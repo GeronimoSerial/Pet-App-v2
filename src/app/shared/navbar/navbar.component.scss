@@ -39,8 +39,20 @@
 // .bg-body-tertiary {
 //   background-color: #4562d7 !important;
 // }
-  
+  .profile-img{
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+   
+  }
+  .navbar .dropdown-toggle::after{
+    display: none;
+  }
 
+  .navbar .dropdown-menu{
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+  }
   .material-symbols-outlined {
     font-variation-settings:
     'FILL' 0,
