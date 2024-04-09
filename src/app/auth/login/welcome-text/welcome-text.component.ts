@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class WelcomeTextComponent implements OnInit {
 
-  words = ['owners ❌', 'parents ✔️', 'lovers 😍', 'fans !🤩'];
+  words = ['owners ❌', 'parents ✔️', 'lovers 😍', 'fans !🤩', 'friends 💜'];
   current = 0;
   fadeOut = false;
   fadeIn = false;

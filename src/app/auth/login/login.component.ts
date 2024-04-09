@@ -1,35 +1,15 @@
 import { Component, AfterViewInit } from '@angular/core';
-import Typeit from 'typeit';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User, UserLogin } from '../../core/models/user';
 import { AuthService } from '../../services/users/auth.service';
 import { Router } from '@angular/router';
-import { response } from 'express';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements AfterViewInit {
-  ngAfterViewInit() {
-    new Typeit('#type-effect', {
-      speed: 40,
-      startDelay: 900,
-      deleteSpeed: 150,
-      cursorChar: "🐾",
-      afterComplete: function (instance){
-        instance.destroy();
-      }
-    })
-      .type('Empowering pet owners', { delay: 300 })
-      .pause(500)
-      .delete(6)
-      .type('parents', { delay: 150 })
-      .pause(500)
-      .type(', one paw at a time. 🐈')
-      .go();
-  }
+export class LoginComponent{
   form: FormGroup;
   loading = false;
   userClass: User;

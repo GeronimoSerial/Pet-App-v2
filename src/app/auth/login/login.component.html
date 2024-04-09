@@ -1,79 +1,54 @@
 <div class="container mt-5 main-logo-background">
   <div class="row justify-content-end">
     <div class="col-12 col-md-8 col-lg-6">
-      <!-- <p class="welcome-text"> Empowering pet <span class="changing"></span> one paw at a time 🐾</p> -->
       <app-welcome-text></app-welcome-text>
     </div>
-    <div class="col-12 col-md-8 col-lg-6">
-      <div class="card card-styling">
-        <div class="card-body">
-        
-          <div class="logo-div mt-3">
-            <img class="logo-image" src="./assets/pet-logo.png" />
-          </div>
-          <h2 class="card-title text-center poppins">PetApp</h2>
-          <form [formGroup]="form" (ngSubmit)="form.valid && loginUser()">
-            <div class="mb-2">
-              <app-input
-              [type]="'email'"
-              [propertyName]="'Email '"
-              [inputValue]="'email'"
-              [formChild]="form"
-              ></app-input>
-            </div>
-            <div class="mb-2">
-              <app-input
-              [type]="'password'"
-              [propertyName]="'Password'"
-              [inputValue]="'password'"
-              [formChild]="form"
-              ></app-input>
-            </div>
-            <div class="mt-3 d-flex justify-content-center">
-              @if (loading) {
-              <button
-                class="btn btn-primary w-100 fw-light"
-                type="button"
-                disabled
-              >
-                <span
-                  class="spinner-border spinner-border-sm"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
-                Loading...
-              </button>
-              } @else {
-              <button
-                type="submit"
-                [disabled]="loading"
-                class="btn btn-primary w-100 fw-light"
-                data-bs-theme="dark"
-              >
-                Log In
-              </button>
-              }
-            </div>
-            <div class="mt-3">
-              <a href="/forgot-password"> Forgot Password? </a>
-            </div>
-            <hr />
-          </form>
-          <div class="mt-3 d-flex justify-content-center">
-            <button
-              type="button"
-              class="btn btn-success fw-light"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              Create new account
-            </button>
-            @defer () {
-              <app-modal></app-modal>
-            }
-          </div>
-        </div>
-      </div>
+    <div class="col-12 col-md-8 col-lg-6 justify-content-end">
+      <div class="background"></div>
+      <form
+        class="card-styling"
+        [formGroup]="form"
+        (ngSubmit)="form.valid && loginUser()"
+      >
+        <img class="logo-image" src="../../../assets/pet-logo.png" alt="logo" />
+        <h3>Login User</h3>
+        <app-input
+          [type]="'email'"
+          [propertyName]="'Email'"
+          [inputValue]="'email'"
+          [formChild]="form"
+        >
+        </app-input>
+
+        <app-input
+          [type]="'password'"
+          [propertyName]="'Password'"
+          [inputValue]="'password'"
+          [formChild]="form"
+        >
+        </app-input>
+
+        <!-- <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+ -->
+
+ <div class="mt-2">
+   <a href="/forgot-password"> Forgot Password? </a>
+ </div>
+       
+ <button class="login-button">Log In</button>
+
+        <button
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          class="create-button"
+        >
+          Create your account
+        </button>
+      </form>
+
+      <app-modal></app-modal>
     </div>
   </div>
 </div>

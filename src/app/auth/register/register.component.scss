@@ -1,5 +1,6 @@
 @use 'sass:math';
 
+
 .card {
     height: 97%;
 }
@@ -33,3 +34,12 @@
     width: 100px;
     object-fit: contain !important;
   }
+
+
+form * {
+    font-family: 'Poppins', sans-serif;
+    color: #060606;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}

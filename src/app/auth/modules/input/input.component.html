@@ -22,7 +22,7 @@
     "
   class="invalid-feedback"
   >
-  <span *ngFor="let error of getErrors(formChild.controls[inputValue])" class="fw-medium fst-italic">
+  <span for="floatingInputGrid" *ngFor="let error of getErrors(formChild.controls[inputValue])" class="fw-medium">
     {{ error }} 
   </span>
 </div>
