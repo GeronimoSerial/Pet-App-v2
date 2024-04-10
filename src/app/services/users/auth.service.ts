@@ -4,8 +4,8 @@ import { BehaviorSubject, map } from 'rxjs';
 import { User, UserLogin, UserRegister } from '../../core/models/user';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { debug, error } from 'console';
 import { ToastrService } from 'ngx-toastr';
+// import { CommonModule, DOCUMENT } from '@angular/common'; //fix ssr issue (localstorage is not defined)
 
 @Injectable({
   providedIn: 'root',
