@@ -10,13 +10,18 @@
   height: auto;
   position: absolute;
   top: 5px;
+  @media screen and (max-width: 768px) {
+    width: 100px;
+    left: -2px;
+    top: 24px;
+  }
 }
 
 /* new style */
 // .
 
 .card-styling {
-  height: auto;
+  height: 430px;
   margin-left: auto;
   width: auto;
   background-color: rgba(255, 255, 255, 0.13);
@@ -28,12 +33,11 @@
 }
 
 form * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #131313;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
-
 }
 
 .card-styling h3 {
@@ -44,10 +48,9 @@ form * {
   text-align: center;
 }
 
-
 .card-styling .login-button {
   margin-top: 10px;
-  color:#ffffff;
+  color: #ffffff;
   width: 100%;
   background-color: #609dde;
   padding: 15px 0;
@@ -70,10 +73,9 @@ form * {
   background-color: rgba(40, 111, 4, 0.585);
   color: #ffffff;
   text-align: center;
-  width:100%;
-  cursor:pointer;
+  width: 100%;
+  cursor: pointer;
 }
 .card-styling .create-button:hover {
-background-color: rgba(61, 145, 71, 0.991);;
+  background-color: rgba(61, 145, 71, 0.991);
 }
-
