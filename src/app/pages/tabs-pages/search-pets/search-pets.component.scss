@@ -10,6 +10,15 @@
     height: 30%;
     object-fit: cover;
 }
+::-webkit-scrollbar{
+    background-color: #97D9E1;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #fff2f2;
+    border-radius: 25px;
+}
 
 .search-button {
     background-color: #fff2f2;
