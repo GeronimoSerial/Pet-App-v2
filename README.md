@@ -1,6 +1,6 @@
 # PetAppV2
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+SE REMOVIO canActivate DEL ROUTING PARA ACCEDER A LA PAGINA /pages/home.
 
 ## Development server
 
