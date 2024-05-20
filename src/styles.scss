@@ -49,6 +49,17 @@ body {
   background-attachment: fixed;
 
 }
+::-webkit-scrollbar {
+  background-color: #97d9e1;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(115, 161, 207);
+  border-radius: 25px;
+}
+
+
 
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
