@@ -26,6 +26,7 @@
     "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
+    "deep-chat": "^1.4.11",
     "express": "^4.18.2",
     "jquery": "^3.7.1",
     "ngx-toastr": "^18.0.0",
@@ -33,6 +34,7 @@
     "primeicons": "^6.0.1",
     "primeng": "^17.12.0",
     "rxjs": "~7.8.0",
+    "tippy.js": "^6.3.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

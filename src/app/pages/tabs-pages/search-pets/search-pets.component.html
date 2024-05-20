@@ -34,27 +34,31 @@
   <h4 class="card-title text-center fw-semibold">Search Results</h4>
 </div>
 <div class="scroll">
-  <div class="mb-3" *ngFor="let pet of pets">
-    <div class="card w-40 mx-auto" style="width: 18rem">
-      <div class="card-body">
-        <p class="d-flex">
-          <span class="fw-semibold">Name:</span
-          ><span class="ms-2">{{ pet.name }}</span>
-        </p>
-        <p class="d-flex">
-          <span class="fw-semibold">Type:</span
-          ><span class="ms-2">{{ pet.type }}</span>
-        </p>
-        <p class="d-flex">
-          <span class="fw-semibold">Breed:</span
-          ><span class="ms-2">{{ pet.breed }}</span>
-        </p>
-        <p class="d-flex">
-          <span class="fw-semibold">Birthday:</span
-          ><span class="ms-2">{{ pet.birthday }}</span>
-        </p>
-        <button class="search-button">View Info</button>
-        
+  <div class="row">
+    <div class="mb-3 col-md-4" *ngFor="let pet of pets; let i = index">
+      <div class="card mx-auto w-40" style="width: 16rem; margin: 0 auto">
+        <div class="card-body">
+          <p class="d-flex">
+            <span class="fw-semibold">Name:</span
+            ><span class="ms-2">{{ pet.name }}</span>
+          </p>
+          <p class="d-flex">
+            <span class="fw-semibold">Type:</span
+            ><span class="ms-2">{{ pet.type }}</span>
+          </p>
+          <p class="d-flex">
+            <span class="fw-semibold">Breed:</span
+            ><span class="ms-2">{{ pet.breed }}</span>
+          </p>
+          <p class="d-flex">
+            <span class="fw-semibold">Birthday:</span
+            ><span class="ms-2">{{ pet.birthday }}</span>
+          </p>
+          <app-popup></app-popup>
+          
+          <!-- Add a line break after every third result -->
+          <div *ngIf="(i + 1) % 3 === 0" class="w-100"></div>
+        </div>
       </div>
     </div>
   </div>

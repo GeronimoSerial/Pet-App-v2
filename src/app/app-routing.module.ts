@@ -7,6 +7,7 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { loginGuard } from './core/guards/login.guard';
 import { accessGuard } from './core/guards/access.guard';
+import { ChatAIComponent } from './pages/chat-ai/chat-ai.component';
 
 const routes: Routes = [
   {
@@ -31,17 +32,27 @@ const routes: Routes = [
   },
   {
     path: 'pages',
-    canActivate: [accessGuard],
+    // canActivate: [accessGuard],
     children: [
       {
         path: 'home',
         component: HomeComponent
+      },
+      {
+        path: 'aivet',
+        component: ChatAIComponent,
       }
     ]
   },
   {
     path: '',
     redirectTo: 'pages/home',
+    pathMatch: 'full',
+  },
+  
+  {
+    path: '',
+    redirectTo: 'pages/aivet',
     pathMatch: 'full',
   },
   

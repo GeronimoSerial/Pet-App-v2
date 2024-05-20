@@ -1,7 +1,4 @@
-<nav
-  class="navbar sticky-top navbar-expand-lg"
-  data-bs-theme="light"
->
+<nav class="navbar sticky-top navbar-expand-lg" data-bs-theme="light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img class="logo-image" src="../../../assets/logo-brand.png" />
@@ -29,6 +26,11 @@
             <i class="material-icons sm-icon">pets</i> Pets
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/aivet">
+            <i class="material-icons sm-icon">smart_toy</i> Your AI Vet
+          </a>
+        </li>
       </ul>
       <div class="btn-group dropstart ms-auto">
         <a
@@ -48,20 +50,20 @@
         <ul class="dropdown-menu">
           <li>
             <a class="dropdown-item" href="#">
-              <span class="material-symbols-outlined sm-icon"> settings </span>
+              <i class="material-icons sm-icon">settings</i>
               Settings
             </a>
           </li>
           <li>
             <a class="dropdown-item" href="#">
-              <span class="material-symbols-outlined sm-icon"> mail </span>
+              <i class="material-icons sm-icon">message</i>
               Messages
             </a>
           </li>
           <li><hr class="dropdown-divider" /></li>
           <li>
             <a (click)="logOut()" class="dropdown-item" href="#">
-              <span class="material-symbols-outlined sm-icon"> logout </span>
+              <i class="material-icons sm-icon">logout</i>
               Logout</a
             >
           </li>

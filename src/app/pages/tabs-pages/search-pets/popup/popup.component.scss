@@ -1,0 +1,25 @@
+.popup {
+    display: none;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.8); /* Color blanco con transparencia */
+    position: absolute;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+  .search-button {
+    background-color: #fff2f2;
+    border-radius: 25px;
+    padding: 8px 18px;
+    color: #000000;
+    border: 2px solid #fff2f2;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      background-color: #97d9e1;
+      border-color: #97d9e1;
+      box-shadow: 0px 0px 10px rgba(151, 217, 225, 0.5);
+  
+    }
+  }

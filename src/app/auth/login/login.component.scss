@@ -79,3 +79,28 @@ form * {
 .card-styling .create-button:hover {
   background-color: rgba(61, 145, 71, 0.991);
 }
+
+
+
+
+// Modal register style
+
+::-webkit-scrollbar {
+  background-color: #97d9e1;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(115, 161, 207);
+  border-radius: 25px;
+}
+.modal-content {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  outline: none;
+  color: #e8e8e8;
+  background-color: rgba(13, 137, 220, 0.564);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}

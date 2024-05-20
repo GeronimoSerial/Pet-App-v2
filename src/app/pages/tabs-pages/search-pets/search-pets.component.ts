@@ -79,7 +79,8 @@ export class SearchPetsComponent implements OnInit{
       },
     })
   }
-  search(){
+
+    search(){
     console.log('search executed');
     const filterPets = this.pets.filter(pet => {
       return pet.name.toLowerCase().includes(this.searchPet.toLowerCase());

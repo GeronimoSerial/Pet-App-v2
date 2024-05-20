@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DeepChat } from 'deep-chat';
+import 'deep-chat';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,5 @@ export class AppComponent {
   title = 'Pet-App-v2';
 
   constructor() {
-   
   }
- 
-
-  
 }

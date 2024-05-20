@@ -27,16 +27,11 @@
           [formChild]="form"
         >
         </app-input>
+        <div class="mt-2">
+          <a href="/forgot-password"> Forgot Password? </a>
+        </div>
 
-        <!-- <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
- -->
-
- <div class="mt-2">
-   <a href="/forgot-password"> Forgot Password? </a>
- </div>
-       
- <button class="login-button">Log In</button>
+        <button class="login-button">Log In</button>
 
         <button
           type="button"
@@ -48,7 +43,55 @@
         </button>
       </form>
 
-      <app-modal></app-modal>
+      <!-- Modal register app -->
+      <div
+        class="modal"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div
+              class="modal-header py-1 d-flex align-items-center justify-content-between"
+            >
+              <div>
+                <h1
+                  class="modal-title text-left fs-3 fw-semibold py-1 mt-3 mb-1"
+                >
+                  Sign Up
+                </h1>
+                <p class="text-body-secondary">It's quick and easy. 🐣</p>
+              </div>
+              <button
+                type="button"
+                class="btn-close p-2"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              @defer (on viewport) {
+              <app-register></app-register>
+              }@placeholder {
+              <div>Loading...</div>
+              }
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-sm"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
